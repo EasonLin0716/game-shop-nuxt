@@ -9,8 +9,9 @@
         <div v-for="game in games" :key="game.id" class="card">
           <h2 class="title-md">{{ game.name }}</h2>
           <div>
-            <img :src="game.background_image" width="100%" alt="" />
+            <img :src="game.background_image" class="game-pic" alt="" />
           </div>
+          <button class="button--green b-0">Show Detail</button>
         </div>
       </div>
     </template>
@@ -29,15 +30,16 @@ export default {
     };
   },
   methods: {
-    async getGames() {
-      const { results } = await gamesApi.getGames();
-      this.games = results;
-      console.log(this.games);
+    async getGames(page, numberOfGames = 9) {
+      const { results } = await gamesApi.getGames(page, numberOfGames);
+      results.forEach(result => {
+        this.games.push(result);
+      });
       this.isRendering = false;
     }
   },
   created() {
-    this.getGames();
+    this.getGames(1);
   }
 };
 </script>

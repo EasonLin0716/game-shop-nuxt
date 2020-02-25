@@ -4,6 +4,10 @@
   </div>
 </template>
 
+<script>
+export default {};
+</script>
+
 <style>
 @import "@/assets/css/reset.css";
 
@@ -82,7 +86,8 @@ html {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   padding: 20px;
-  height: 300px;
+  height: 380px;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -98,5 +103,11 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.game-pic {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
 }
 </style>
