@@ -11,7 +11,13 @@
           <div>
             <img :src="game.background_image" class="game-pic" alt="" />
           </div>
-          <button class="button--green b-0">Show Detail</button>
+          <button
+            class="button--green b-0"
+            @click="openModal"
+            :data-id="game.id"
+          >
+            Show Detail
+          </button>
         </div>
       </div>
       <AppPagination
@@ -19,6 +25,24 @@
         :currentPage="currentPage"
         :totalPages="totalPages"
       />
+      <div class="modal">
+        <div class="modal-container">
+          <div class="modal-header">
+            <span class="close" @click="closeModal">&times;</span>
+          </div>
+          <div class="modal-body">
+            <h2 class="title-md">{{ game.name }}</h2>
+            <img class="modal-pic" :src="game.background_image" alt="" />
+            <div v-html="game.description"></div>
+            <a :href="game.website" target="_blank"
+              >&laquo; Visit Offical Website &raquo;</a
+            >
+          </div>
+          <div class="modal-footer">
+            <button class="button--grey" @click="closeModal">Close</button>
+          </div>
+        </div>
+      </div>
     </template>
   </div>
 </template>
@@ -33,6 +57,7 @@ export default {
     return {
       isRendering: true,
       games: [],
+      game: {},
       currentPage: 1,
       totalPages: 10
     };
@@ -47,6 +72,19 @@ export default {
     async handlePageChange(num) {
       this.currentPage = num;
       this.getGames(this.currentPage);
+    },
+    async openModal(e) {
+      const { id } = e.target.dataset;
+      const response = await gamesApi.getGame(id);
+      this.game = response;
+      this.game.description = this.game.description.slice(0, 300) + "...";
+      console.log(this.game);
+      const modal = document.querySelector(".modal");
+      modal.classList.add("modal-show");
+    },
+    closeModal() {
+      const modal = document.querySelector(".modal");
+      modal.classList.remove("modal-show");
     }
   },
   created() {
@@ -56,6 +94,46 @@ export default {
 </script>
 
 <style scoped>
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  overflow-y: auto;
+}
+
+.modal-show {
+  display: block !important;
+}
+
+.modal-container {
+  width: 95%;
+  max-width: 720px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+}
+
+.modal-header {
+  padding: 5px 10px 5px 0;
+}
+
+.modal-pic {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 1000px) {
   .container {
     grid-template-columns: 50% 50%;

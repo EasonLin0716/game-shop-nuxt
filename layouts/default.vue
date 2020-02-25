@@ -34,6 +34,10 @@ a {
   cursor: pointer;
 }
 
+a:hover {
+  color: #666 !important;
+}
+
 .title-lg {
   font-size: 64px;
   text-align: center;
@@ -53,6 +57,7 @@ a {
   color: #3b8070;
   text-decoration: none;
   padding: 10px 30px;
+  transition: background-color 0.3s;
 }
 
 .button--green:hover {
@@ -68,6 +73,7 @@ a {
   text-decoration: none;
   padding: 10px 30px;
   margin-left: 15px;
+  transition: background-color 0.3s;
 }
 
 .button--grey:hover {
@@ -91,7 +97,6 @@ a {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   padding: 20px;
   height: 380px;
-  cursor: pointer;
 }
 
 .card:hover {
@@ -113,5 +118,14 @@ a {
   width: 100%;
   height: 240px;
   object-fit: cover;
+}
+
+.close {
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
 }
 </style>
