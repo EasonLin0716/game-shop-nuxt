@@ -3,14 +3,17 @@
     <template v-if="isRendering">
       <AppClipLoader />
     </template>
-    <div v-else class="container">
-      <h1>Games</h1>
-      <div v-for="game in games" :key="game.id">
-        <div class="game-box">
-          <h2>{{ game.name }}</h2>
+    <template v-else>
+      <h1 class="title-lg">Games</h1>
+      <div class="container">
+        <div v-for="game in games" :key="game.id" class="card">
+          <h2 class="title-md">{{ game.name }}</h2>
+          <div>
+            <img :src="game.background_image" width="100%" alt="" />
+          </div>
         </div>
       </div>
-    </div>
+    </template>
   </div>
 </template>
 

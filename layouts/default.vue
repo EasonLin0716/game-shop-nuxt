@@ -26,9 +26,16 @@ html {
   margin: 0;
 }
 
-h1 {
+.title-lg {
   font-size: 64px;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.title-md {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .button--green {
@@ -60,13 +67,36 @@ h1 {
   background-color: #35495e;
 }
 
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 20px;
+  height: 300px;
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
 .bg-games {
-  height: 100vh;
   background: linear-gradient(
       rgba(240, 240, 240, 0.5),
       rgba(240, 240, 240, 0.5)
     ),
     url("../assets/img/games-background.jpeg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 </style>
