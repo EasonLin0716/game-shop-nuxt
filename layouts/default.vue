@@ -5,9 +5,11 @@
 </template>
 
 <style>
+@import "@/assets/css/reset.css";
+
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -22,6 +24,11 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+h1 {
+  font-size: 64px;
+  text-align: center;
 }
 
 .button--green {
@@ -51,5 +58,15 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.bg-games {
+  height: 100vh;
+  background: linear-gradient(
+      rgba(240, 240, 240, 0.5),
+      rgba(240, 240, 240, 0.5)
+    ),
+    url("../assets/img/games-background.jpeg");
+  background-size: cover;
 }
 </style>
