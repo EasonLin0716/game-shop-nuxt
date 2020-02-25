@@ -30,6 +30,10 @@ html {
   margin: 0;
 }
 
+a {
+  cursor: pointer;
+}
+
 .title-lg {
   font-size: 64px;
   text-align: center;
