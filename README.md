@@ -1,10 +1,14 @@
 # game-shop-nuxt
 
-> a practice of nuxt.js
+Simple practice of Nuxt.js
+
+## Tools
+
+Nuxt.js
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm install
 
@@ -20,3 +24,7 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Thrid Party API
+
+[RAWG Video Games Database](https://rapidapi.com/accujazz/api/rawg-video-games-database/endpoints)
