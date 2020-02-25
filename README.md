@@ -2,6 +2,10 @@
 
 Simple practice of Nuxt.js
 
+![cover1](https://github.com/EasonLin0716/game-shop-nuxt/blob/master/assets/img/cover1.JPG?raw=true)
+
+![cover2](https://github.com/EasonLin0716/game-shop-nuxt/blob/master/assets/img/cover2.JPG?raw=true)
+
 ## Tools
 
 Nuxt.js
