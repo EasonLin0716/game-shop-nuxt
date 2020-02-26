@@ -10,6 +10,7 @@ export default {};
 
 <style>
 @import "@/assets/css/reset.css";
+@import "@/assets/css/animations.css";
 
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -35,7 +36,7 @@ a {
 }
 
 a:hover {
-  color: #666 !important;
+  color: rgb(200, 200, 200);
 }
 
 .title-lg {
@@ -79,6 +80,20 @@ a:hover {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.button--navy {
+  border-radius: 4px;
+  border: 1px solid #35495e;
+  color: #35495e;
+  text-decoration: none;
+  padding: 10px 30px;
+  transition: background-color 0.3s;
+}
+
+.button--navy:hover {
+  color: #fff;
+  background-color: navy;
 }
 
 .container {
