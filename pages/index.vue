@@ -27,6 +27,12 @@ export default {
   justify-content: center;
 }
 
+h1,
+button {
+  position: relative;
+  animation: slideup 0.5s;
+}
+
 button {
   display: block;
   margin: 0 auto;

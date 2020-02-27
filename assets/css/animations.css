@@ -6,3 +6,15 @@
     opacity: 1;
   }
 }
+
+@keyframes slideup {
+  0% {
+    top: 120px;
+  }
+  50% {
+    top: 60px;
+  }
+  100% {
+    top: 0;
+  }
+}
