@@ -6,7 +6,7 @@ Simple practice of Nuxt.js. For heroku demo version see: https://game-shop-nuxt.
 
 ![cover2](https://github.com/EasonLin0716/game-shop-nuxt/blob/master/assets/img/cover2.JPG?raw=true)
 
-This is a non-commercial website built for practicing nuxt.js, vanilla js and pure css.
+This is a non-commercial website built for practicing nuxt.js with just vanilla js and css.
 
 ## Tools
 
