@@ -143,4 +143,8 @@ a:hover {
 .close:hover {
   color: red;
 }
+
+.mt-lg {
+  margin-top: 50px;
+}
 </style>

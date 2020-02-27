@@ -1,10 +1,11 @@
 <template>
   <div class="bg-games">
+    <AppNavbar />
     <template v-if="isRendering">
       <AppClipLoader />
     </template>
     <template v-else>
-      <h1 class="title-lg">Games</h1>
+      <h1 class="title-lg mt-lg">Games</h1>
       <div class="container">
         <div v-for="game in games" :key="game.id" class="card">
           <h2 class="title-md">{{ game.name }}</h2>
@@ -49,10 +50,11 @@
 
 <script>
 import { gamesApi } from "@/api/games.js";
+import AppNavbar from "@/components/AppNavbar";
 import AppClipLoader from "@/components/AppClipLoader";
 import AppPagination from "@/components/AppPagination";
 export default {
-  components: { AppClipLoader, AppPagination },
+  components: { AppClipLoader, AppPagination, AppNavbar },
   data() {
     return {
       isRendering: true,
