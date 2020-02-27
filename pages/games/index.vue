@@ -16,6 +16,7 @@
             class="button--green width-100"
             @click="openModal"
             :data-id="game.id"
+            :disabled="isLoading"
           >
             Show Detail
           </button>
@@ -58,6 +59,7 @@ export default {
   data() {
     return {
       isRendering: true,
+      isLoading: false,
       games: [],
       game: {},
       currentPage: 1,
@@ -76,13 +78,14 @@ export default {
       this.getGames(this.currentPage);
     },
     async openModal(e) {
+      this.isLoading = true;
       const { id } = e.target.dataset;
       const response = await gamesApi.getGame(id);
       this.game = response;
       this.game.description = this.game.description.slice(0, 300) + "...";
-      console.log(this.game);
       const modal = document.querySelector(".modal");
       modal.classList.add("modal-show");
+      this.isLoading = false;
     },
     closeModal() {
       const modal = document.querySelector(".modal");
@@ -96,6 +99,8 @@ export default {
 </script>
 
 <style scoped>
+@import "@/assets/css/animations.css";
+
 .modal {
   width: 100%;
   height: 100%;
@@ -105,6 +110,7 @@ export default {
   background: rgba(0, 0, 0, 0.7);
   display: none;
   overflow-y: auto;
+  animation: fadein 0.5s;
 }
 
 .modal-show {
