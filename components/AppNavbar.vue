@@ -1,6 +1,8 @@
 <template>
   <div id="navbar">
-    <img src="@/static/logo.png" class="logo" alt="logo" />
+    <router-link to="/">
+      <img src="@/static/logo.png" class="logo" alt="logo" />
+    </router-link>
     <div class="nav-buttons">
       <span>Home</span>
       <span>News</span>
@@ -53,5 +55,12 @@ span {
   position: fixed;
   z-index: 1;
   transition: top 0.3s;
+  padding: 0 80px;
+}
+
+@media (max-width: 1200px) {
+  #navbar {
+    padding: 0;
+  }
 }
 </style>
