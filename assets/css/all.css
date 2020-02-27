@@ -17,7 +17,8 @@ html {
   margin: 0;
 }
 
-a {
+a,
+button {
   cursor: pointer;
 }
 
@@ -84,6 +85,9 @@ a:hover {
 
 .container {
   min-height: 100vh;
+  max-width: 1140px;
+  padding: 0 15px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 30% 30% 30%;
   grid-gap: 20px;
@@ -132,4 +136,8 @@ a:hover {
 
 .mt-lg {
   margin-top: 50px;
+}
+
+.width-100 {
+  width: 100%;
 }

@@ -13,7 +13,7 @@
             <img :src="game.background_image" class="game-pic" alt="" />
           </div>
           <button
-            class="button--green b-0"
+            class="button--green width-100"
             @click="openModal"
             :data-id="game.id"
           >
@@ -123,6 +123,13 @@ export default {
 
 .modal-header {
   padding: 5px 10px 5px 0;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 0.5px solid rgb(200, 200, 200);
+}
+
+.modal-body {
+  padding: 25px;
 }
 
 .modal-pic {
@@ -134,6 +141,8 @@ export default {
 .modal-footer {
   display: flex;
   justify-content: center;
+  padding: 15px 0;
+  border-top: 1px solid rgb(200, 200, 200);
 }
 
 @media (max-width: 1000px) {
